@@ -16,12 +16,12 @@ WIN_COMBINATIONS = [
                    ]
 def won?(board)
     WIN_COMBINATIONS.detect { |combo|
-      equal_positions?(board, combo) &&
+      three_in_a_row?(board, combo) &&
       position_taken?(board, combo[0])
     }
 end
 
-def equal_positions?(board, combo)
+def three_in_a_row?(board, combo)
   board[combo[0]] == board[combo[1]] &&
   board[combo[1]] == board[combo[2]]
 end
